@@ -1,9 +1,9 @@
-name: CI
+name: Integracion Continua Flask
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  pruebas_unitarias:
     runs-on: ubuntu-latest
 
     env:
@@ -11,13 +11,12 @@ jobs:
       TESTING: "True"
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
