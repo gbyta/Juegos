@@ -1,6 +1,5 @@
 ![CI](https://github.com/gbyta/Juegos/actions/workflows/ci.yml/badge.svg)
-[![Coverage](https://codecov.io/gh/gbyta/Juegos/branch/master/graph/badge.svg)](https://codecov.io/gh/gbyta/Juegos)
-
+[![Coverage](https://codecov.io/gh/gbyta/Juegos/branch/main/graph/badge.svg)](https://codecov.io/gh/gbyta/Juegos)
 # Suite de Pruebas Unitarias — Aplicación Web de Videojuegos (Flask)
 
 **Autora:** Gabriela Aguilar  
