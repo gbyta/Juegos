@@ -1,0 +1,47 @@
+test_baja_videojuego_api (test_api.PruebasApiRest.test_baja_videojuego_api)
+Verifica la eliminación vía DELETE /api/juegos/<id> (204 No Content). ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegoos\api\routes.py:62: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_consulta_detalle_y_recurso_no_encontrado (test_api.PruebasApiRest.test_consulta_detalle_y_recurso_no_encontrado)
+Verifica GET /api/juegos/<id> válido (200) e inexistente (404). ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegoos\api\routes.py:44: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_edicion_completa_videojuego_api (test_api.PruebasApiRest.test_edicion_completa_videojuego_api)
+Verifica la actualización mediante PUT /api/juegos/<id> (200 OK). ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegoos\api\routes.py:51: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_obtener_catalogo_json (test_api.PruebasApiRest.test_obtener_catalogo_json)
+Verifica que GET /api/juegos retorne la colección en formato JSON. ... ok
+test_rechazo_payload_invalido_api (test_api.PruebasApiRest.test_rechazo_payload_invalido_api)
+Verifica el error 400 Bad Request cuando faltan campos obligatorios. ... ok
+test_registrar_videojuego_api_exitoso (test_api.PruebasApiRest.test_registrar_videojuego_api_exitoso)
+Verifica la creación vía POST /api/juegos con código 201 Created. ... ok
+test_borrado_videojuego_existente (test_models.PruebasModelosORM.test_borrado_videojuego_existente)
+Comprueba que al eliminar un juego ya no exista en la tabla. ... ok
+test_insercion_multiple_catalogo (test_models.PruebasModelosORM.test_insercion_multiple_catalogo)
+Comprueba el guardado simultáneo de varios videojuegos. ... ok
+test_modificacion_datos_videojuego (test_models.PruebasModelosORM.test_modificacion_datos_videojuego)
+Comprueba la edición de nombre y precio en un registro existente. ... ok
+test_registro_nuevo_videojuego (test_models.PruebasModelosORM.test_registro_nuevo_videojuego)
+Comprueba que un juego se almacene y recupere con su ID asignado. ... ok
+test_seguridad_y_cifrado_usuario (test_models.PruebasModelosORM.test_seguridad_y_cifrado_usuario)
+Comprueba el hash de contraseña y el bloqueo de lectura directa. ... ok
+test_acceso_catalogo_con_usuario_autenticado (test_routes.PruebasRutasWeb.test_acceso_catalogo_con_usuario_autenticado)
+Comprueba que un usuario autenticado visualice el listado de juegos. ... ok
+test_alta_videojuego_desde_formulario (test_routes.PruebasRutasWeb.test_alta_videojuego_desde_formulario)
+Comprueba el registro de un videojuego mediante POST /guardar_juego. ... ok
+test_bloqueo_rutas_sin_autenticar (test_routes.PruebasRutasWeb.test_bloqueo_rutas_sin_autenticar)
+Comprueba que las rutas protegidas redirijan (302) a usuarios anónimos. ... ok
+test_eliminacion_videojuego_desde_formulario (test_routes.PruebasRutasWeb.test_eliminacion_videojuego_desde_formulario)
+Comprueba el borrado de un videojuego mediante POST /eliminar_juego. ... C:\Users\lansa\OneDrive\Documentos\Entono_Virtual\Juegoos\controllers.py:24: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  juego = Juego.query.get(id)
+ok
+test_manejo_error_404_url_desconocida (test_routes.PruebasRutasWeb.test_manejo_error_404_url_desconocida)
+Comprueba la respuesta 404 ante rutas inexistentes. ... ok
+test_vista_login_accesible (test_routes.PruebasRutasWeb.test_vista_login_accesible)
+Comprueba que la pantalla pública de acceso responda 200 OK. ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.407s
+
+OK
