@@ -5,6 +5,8 @@ from flask_login import LoginManager, login_required
 from werkzeug.exceptions import HTTPException, BadRequest, MethodNotAllowed
 from extensions import db
 
+
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
@@ -13,10 +15,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'una_clave_muy_secreta_y_dificil'
-
-if os.environ.get('TESTING') == 'True':
-    app.config['TESTING'] = True
-    app.config['WTF_CSRF_ENABLED'] = False
 
 db.init_app(app)
 
@@ -33,7 +31,7 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(user_id):
     from models import User
-    return db.session.get(User, int(user_id))
+    return User.query.get(int(user_id))
 
 import controllers
 
@@ -83,6 +81,7 @@ def ver_videojuego(id):
     juego = controllers.obtener_juego_por_id(id)
     if not juego:
         abort(404)
+    # Ejemplo de validación: si se pasa un argumento invalido en querystring (?test=bad), lanza 400
     if request.args.get('error') == 'bad':
         abort(400)
     return render_template('editar_juego.html', juego=juego)
@@ -126,6 +125,7 @@ def actualizar_juego():
     controllers.actualizar_juego(id, nombre, descripcion, precio)
     return redirect('/juegos')
 
+# Ruta de prueba para forzar una excepción no controlada (Error 500 y Logging)
 @app.route('/forzar_error_500')
 def forzar_error_500():
     try:
